@@ -1,38 +1,50 @@
 [
   {
     "slug": "best-memory-providers",
-    "title": "Best Memory Providers for Hermes Agent",
-    "description": "The top community-built memory and context management tools for Hermes Agent, ranked by GitHub stars. Memory is what makes Hermes self-improving — these tools extend its built-in recall with long-term semantic memory, graph-based retrieval, and cross-session persistence.",
-    "filter": { "category": "Memory & Context" }
+    "title": "Hermes Agent 추천 메모리 제공자",
+    "description": "GitHub 스타 기준으로 정리한 Hermes Agent용 메모리·컨텍스트 관리 도구입니다. 메모리는 Hermes가 자기개선형 에이전트가 되는 핵심이며, 이 도구들은 장기 의미 메모리, 그래프 기반 검색, 세션 간 지속성을 확장합니다.",
+    "filter": {
+      "category": "Memory & Context"
+    }
   },
   {
     "slug": "top-skills",
-    "title": "Top Skills for Hermes Agent",
-    "description": "The most popular skills and skill registries in the Hermes ecosystem, ranked by GitHub stars. Skills are reusable capabilities that follow the agentskills.io open standard — from cybersecurity to diagram generation to creative ideation.",
-    "filter": { "category": "Skills & Skill Registries" }
+    "title": "Hermes Agent 인기 스킬",
+    "description": "GitHub 스타 기준으로 정리한 Hermes 생태계의 인기 스킬과 스킬 레지스트리입니다. 스킬은 agentskills.io 공개 표준을 따르는 재사용 가능한 기능입니다.",
+    "filter": {
+      "category": "Skills & Skill Registries"
+    }
   },
   {
     "slug": "deployment-options",
-    "title": "Deployment Options for Hermes Agent",
-    "description": "How to deploy Hermes Agent in production — Docker images, Nix packages, systemd services, and managed cloud templates. From a $5 VPS to enterprise Kubernetes.",
-    "filter": { "category": "Deployment & Infra" }
+    "title": "Hermes Agent 배포 옵션",
+    "description": "프로덕션에서 Hermes Agent를 배포하는 방법입니다. Docker 이미지, Nix 패키지, systemd 서비스, 관리형 클라우드 템플릿까지 5달러 VPS부터 엔터프라이즈 Kubernetes까지 다룹니다.",
+    "filter": {
+      "category": "Deployment & Infra"
+    }
   },
   {
     "slug": "multi-agent-frameworks",
-    "title": "Multi-Agent Frameworks for Hermes",
-    "description": "Orchestration tools for running multiple Hermes agents together. Fleet management dashboards, swarm coordinators, and multi-agent delegation systems.",
-    "filter": { "category": "Multi-Agent & Orchestration" }
+    "title": "Hermes 멀티 에이전트 프레임워크",
+    "description": "여러 Hermes 에이전트를 함께 실행하기 위한 오케스트레이션 도구입니다. 플릿 관리 대시보드, 스웜 코디네이터, 멀티 에이전트 위임 시스템을 모았습니다.",
+    "filter": {
+      "category": "Multi-Agent & Orchestration"
+    }
   },
   {
     "slug": "developer-tools",
-    "title": "Developer Tools for Hermes Agent",
-    "description": "CLI tools, linters, migration helpers, token trackers, and other utilities that make developing with Hermes easier.",
-    "filter": { "category": "Developer Tools" }
+    "title": "Hermes Agent 개발자 도구",
+    "description": "Hermes 개발을 편하게 만드는 CLI, 린터, 마이그레이션 도우미, 토큰 추적기, 기타 유틸리티입니다.",
+    "filter": {
+      "category": "Developer Tools"
+    }
   },
   {
     "slug": "workspaces-and-guis",
-    "title": "Workspaces & GUIs for Hermes Agent",
-    "description": "Web-based and desktop interfaces that wrap Hermes Agent with visual UIs — chat interfaces, terminal emulators, memory browsers, and configuration dashboards.",
-    "filter": { "category": "Workspaces & GUIs" }
+    "title": "Hermes Agent 워크스페이스 & GUI",
+    "description": "Hermes Agent를 시각적 UI로 감싸는 웹/데스크톱 인터페이스입니다. 채팅 인터페이스, 터미널 에뮬레이터, 메모리 브라우저, 설정 대시보드를 포함합니다.",
+    "filter": {
+      "category": "Workspaces & GUIs"
+    }
   }
 ]

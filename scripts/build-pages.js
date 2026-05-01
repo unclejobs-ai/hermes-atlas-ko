@@ -19,7 +19,7 @@ import { githubHeaders, fetchReadme, fetchAllMetadata } from "../lib/github.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const SITE_URL = "https://hermesatlas.com";
+const SITE_URL = process.env.SITE_URL || "https://hermesatlas.com";
 
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 const SKIP_FETCH = !GITHUB_TOKEN;
@@ -175,36 +175,36 @@ const THEME_TOGGLE_SCRIPT = `(function(){var t=document.getElementById('theme-to
 // ── Shared masthead ──
 function renderMasthead(activeNav) {
   const nav = [
-    { href: "/", label: "map", id: "map" },
-    { href: "/#curated-lists", label: "lists", id: "lists" },
-    { href: "/guide/", label: "handbook", id: "handbook" },
-    { href: "/reports/state-of-hermes-april-2026", label: "reports", id: "reports" },
-    { href: "/#newsletter", label: "newsletter", id: "newsletter" },
-    { href: "https://github.com/ksimback/hermes-ecosystem", label: "source", id: "source" },
+    { href: "/", label: "지도", id: "map" },
+    { href: "/#curated-lists", label: "목록", id: "lists" },
+    { href: "/guide/", label: "핸드북", id: "handbook" },
+    { href: "/reports/state-of-hermes-april-2026", label: "리포트", id: "reports" },
+    { href: "/#newsletter", label: "뉴스레터", id: "newsletter" },
+    { href: "https://github.com/ksimback/hermes-ecosystem", label: "소스", id: "source" },
   ];
   const navHtml = nav
     .map(n => `<a href="${n.href}"${n.id === activeNav ? ' class="active"' : ""}>${n.label}</a>`)
     .join("\n    ");
   return `<header class="masthead">
-  <a href="/" class="brand" aria-label="Hermes Atlas — home">hermes atlas</a>
-  <div class="mast-meta" aria-label="Site metadata">
+  <a href="/" class="brand" aria-label="Hermes Atlas — 홈">hermes atlas</a>
+  <div class="mast-meta" aria-label="사이트 메타데이터">
     <span>apr·2026</span>
     <span id="meta-count">${repos.length}·repos</span>
     <span>hermes·v0.10.0</span>
-    <a class="mast-star" id="meta-atlas" href="https://github.com/ksimback/hermes-ecosystem" target="_blank" rel="noopener" aria-label="Star Hermes Atlas on GitHub">★ star this repo</a>
+    <a class="mast-star" id="meta-atlas" href="https://github.com/ksimback/hermes-ecosystem" target="_blank" rel="noopener" aria-label="Star Hermes Atlas on GitHub">★ GitHub에서 별 주기</a>
   </div>
   <nav class="mast-nav" aria-label="Primary">
     ${navHtml}
   </nav>
   <button id="theme-toggle" class="mast-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
-    <span class="tt-light">light</span><span class="tt-sep">/</span><span class="tt-dark">dark</span>
+    <span class="tt-light">라이트</span><span class="tt-sep">/</span><span class="tt-dark">다크</span>
   </button>
 </header>`;
 }
 
 // ── Shared footer ──
 const PAGE_FOOTER = `<footer class="page-footer">
-  <div class="fn-left">hermes atlas · curated by <a href="https://github.com/ksimback">ksimback</a> · <a href="https://github.com/ksimback/hermes-ecosystem/issues">suggest a repo</a> · <a href="/privacy">privacy</a></div>
+  <div class="fn-left">hermes atlas · curated by <a href="https://github.com/ksimback">ksimback</a> · <a href="https://github.com/ksimback/hermes-ecosystem/issues">저장소 제안</a> · <a href="/privacy">privacy</a></div>
   <div>v2 · 2026.04</div>
 </footer>`;
 
@@ -712,7 +712,7 @@ ${summary ? `
 ${PAGE_FOOTER}
 
 <script>${THEME_TOGGLE_SCRIPT}</script>
-<script>(function(){fetch('/api/stars').then(function(r){return r.ok&&r.json()}).then(function(d){if(!d)return;var a=document.getElementById('meta-atlas');if(a&&d.atlas&&d.atlas.stars)a.textContent='★ '+d.atlas.stars+' · star this repo';var c=document.getElementById('meta-count');if(c&&d.totals&&d.totals.count)c.textContent=d.totals.count+'·repos'}).catch(function(){});})();</script>
+<script>(function(){fetch('/api/stars').then(function(r){return r.ok&&r.json()}).then(function(d){if(!d)return;var a=document.getElementById('meta-atlas');if(a&&d.atlas&&d.atlas.stars)a.textContent='★ '+d.atlas.stars+' · GitHub에서 별 주기';var c=document.getElementById('meta-count');if(c&&d.totals&&d.totals.count)c.textContent=d.totals.count+'·repos'}).catch(function(){});})();</script>
 <!-- Cloudflare Web Analytics -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon='{"token": "fe0d4d79280b4386b6b0cd99b2d94dbc"}'></script>
@@ -832,14 +832,14 @@ ${renderMasthead("lists")}
 </div>
 ${listicleHtml}
 
-<div class="back-link"><a href="/">← back to the map</a></div>
+<div class="back-link"><a href="/">← 지도로 돌아가기</a></div>
 
 </main>
 
 ${PAGE_FOOTER}
 
 <script>${THEME_TOGGLE_SCRIPT}</script>
-<script>(function(){fetch('/api/stars').then(function(r){return r.ok&&r.json()}).then(function(d){if(!d)return;var a=document.getElementById('meta-atlas');if(a&&d.atlas&&d.atlas.stars)a.textContent='★ '+d.atlas.stars+' · star this repo';var c=document.getElementById('meta-count');if(c&&d.totals&&d.totals.count)c.textContent=d.totals.count+'·repos'}).catch(function(){});})();</script>
+<script>(function(){fetch('/api/stars').then(function(r){return r.ok&&r.json()}).then(function(d){if(!d)return;var a=document.getElementById('meta-atlas');if(a&&d.atlas&&d.atlas.stars)a.textContent='★ '+d.atlas.stars+' · GitHub에서 별 주기';var c=document.getElementById('meta-count');if(c&&d.totals&&d.totals.count)c.textContent=d.totals.count+'·repos'}).catch(function(){});})();</script>
 <!-- Cloudflare Web Analytics -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon='{"token": "fe0d4d79280b4386b6b0cd99b2d94dbc"}'></script>

@@ -1,7 +1,7 @@
 {
-  "name": "hermes-ecosystem",
+  "name": "hermes-atlas-ko",
   "version": "1.0.0",
-  "description": "Live ecosystem map for Hermes Agent by Nous Research",
+  "description": "Korean localization of Hermes Atlas, the community ecosystem map for Hermes Agent",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -9,5 +9,10 @@
     "marked": "^15.0.12",
     "openai": "^4.73.0",
     "redis": "^4.7.0"
+  },
+  "scripts": {
+    "serve": "python3 scripts/serve.py",
+    "build:pages": "node scripts/build-pages.js",
+    "check:ko": "python3 scripts/check-ko.py"
   }
 }

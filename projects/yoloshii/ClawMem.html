@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -72,31 +72,31 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main">본문으로 건너뛰기</a>
 
 <header class="masthead">
-  <a href="/" class="brand" aria-label="Hermes Atlas — home">hermes atlas</a>
-  <div class="mast-meta" aria-label="Site metadata">
+  <a href="/" class="brand" aria-label="Hermes Atlas — 홈">hermes atlas</a>
+  <div class="mast-meta" aria-label="사이트 메타데이터">
     <span>apr·2026</span>
     <span id="meta-count">100·repos</span>
     <span>hermes·v0.10.0</span>
-    <a class="mast-star" id="meta-atlas" href="https://github.com/ksimback/hermes-ecosystem" target="_blank" rel="noopener" aria-label="Star Hermes Atlas on GitHub">★ star this repo</a>
+    <a class="mast-star" id="meta-atlas" href="https://github.com/ksimback/hermes-ecosystem" target="_blank" rel="noopener" aria-label="GitHub에서 Hermes Atlas 별 주기">★ GitHub에서 별 주기</a>
   </div>
-  <nav class="mast-nav" aria-label="Primary">
+  <nav class="mast-nav" aria-label="주요 메뉴">
     <a href="/" class="active">map</a>
-    <a href="/#curated-lists">lists</a>
-    <a href="/guide/">handbook</a>
-    <a href="/reports/state-of-hermes-april-2026">reports</a>
-    <a href="/#newsletter">newsletter</a>
-    <a href="https://github.com/ksimback/hermes-ecosystem">source</a>
+    <a href="/#curated-lists">목록</a>
+    <a href="/guide/">핸드북</a>
+    <a href="/reports/state-of-hermes-april-2026">리포트</a>
+    <a href="/#newsletter">뉴스레터</a>
+    <a href="https://github.com/ksimback/hermes-ecosystem">소스</a>
   </nav>
-  <button id="theme-toggle" class="mast-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
-    <span class="tt-light">light</span><span class="tt-sep">/</span><span class="tt-dark">dark</span>
+  <button id="theme-toggle" class="mast-toggle" aria-label="라이트/다크 테마 전환" title="테마 전환">
+    <span class="tt-light">라이트</span><span class="tt-sep">/</span><span class="tt-dark">다크</span>
   </button>
 </header>
 
 <div class="breadcrumb" aria-label="Breadcrumb">
-  <a href="/">map</a><span class="sep">/</span><a href="/lists/best-memory-providers">memory &amp; context</a><span class="sep">/</span>clawmem
+  <a href="/">지도</a><span class="sep">/</span><a href="/lists/best-memory-providers">memory &amp; context</a><span class="sep">/</span>clawmem
 </div>
 
 <main id="main">
@@ -1159,12 +1159,12 @@ clawmem status                                  Quick index status
 </main>
 
 <footer class="page-footer">
-  <div class="fn-left">hermes atlas · curated by <a href="https://github.com/ksimback">ksimback</a> · <a href="https://github.com/ksimback/hermes-ecosystem/issues">suggest a repo</a> · <a href="/privacy">privacy</a></div>
+  <div class="fn-left">hermes atlas · curated by <a href="https://github.com/ksimback">ksimback</a> · <a href="https://github.com/ksimback/hermes-ecosystem/issues">저장소 제안</a> · <a href="/privacy">개인정보</a></div>
   <div>v2 · 2026.04</div>
 </footer>
 
 <script>(function(){var t=document.getElementById('theme-toggle');if(!t)return;function render(){var c=document.documentElement.getAttribute('data-theme');t.querySelector('.tt-light').classList.toggle('tt-active',c==='light');t.querySelector('.tt-dark').classList.toggle('tt-active',c!=='light');}render();t.addEventListener('click',function(){var c=document.documentElement.getAttribute('data-theme');var n=c==='light'?'dark':'light';document.documentElement.setAttribute('data-theme',n);try{localStorage.setItem('theme',n)}catch(e){}render();});})();</script>
-<script>(function(){fetch('/api/stars').then(function(r){return r.ok&&r.json()}).then(function(d){if(!d)return;var a=document.getElementById('meta-atlas');if(a&&d.atlas&&d.atlas.stars)a.textContent='★ '+d.atlas.stars+' · star this repo';var c=document.getElementById('meta-count');if(c&&d.totals&&d.totals.count)c.textContent=d.totals.count+'·repos'}).catch(function(){});})();</script>
+<script>(function(){fetch('/api/stars').then(function(r){return r.ok&&r.json()}).then(function(d){if(!d)return;var a=document.getElementById('meta-atlas');if(a&&d.atlas&&d.atlas.stars)a.textContent='★ '+d.atlas.stars+' · GitHub에서 별 주기';var c=document.getElementById('meta-count');if(c&&d.totals&&d.totals.count)c.textContent=d.totals.count+'·repos'}).catch(function(){});})();</script>
 <!-- Cloudflare Web Analytics -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
         data-cf-beacon='{"token": "fe0d4d79280b4386b6b0cd99b2d94dbc"}'></script>

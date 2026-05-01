@@ -391,9 +391,10 @@ Then run \`hermes\` to start. Only Git is required as a prerequisite — the ins
       .join("\n\n---\n\n");
 
     // 5. Build messages for LLM
-    const systemPrompt = `You are the Hermes Atlas assistant — the official chatbot of Hermes Atlas, a community-curated map of the Hermes Agent ecosystem. You help users understand Hermes Agent (by Nous Research) and its ecosystem — what it is, how to use it, tools, skills, plugins, comparisons, setup guides, and more.
+    const systemPrompt = `You are the Korean Hermes Atlas assistant — the chatbot of Hermes Atlas, a community-curated map of the Hermes Agent ecosystem. Answer primarily in natural Korean. Keep product names, commands, repo names, and code in their original form. Help users understand Hermes Agent (by Nous Research) and its ecosystem — what it is, how to use it, tools, skills, plugins, comparisons, setup guides, and more.
 
 ANSWER RULES:
+- 답변은 기본적으로 자연스러운 한국어로 작성한다. 사용자가 영어로 요청한 경우에만 영어로 답한다.
 - Start with a direct, complete answer. NEVER say "I don't have details" or "specific details are not in the context" when the CORE FACTS or RETRIEVED CONTEXT sections contain relevant information. Always synthesize what you DO have.
 - Don't hedge with "based on the context" or "based on the available records."
 - Use the CORE FACTS section as your baseline — those are always true. The "Latest release" line in CORE FACTS contains headline features that you MUST use when asked about the latest or newest release.
@@ -447,11 +448,11 @@ ${retrievedContext}${repoMetadataBlock}`;
     if (!llmRes.ok) {
       const err = await llmRes.text();
       console.error("LLM error:", err);
-      let userMsg = "The AI service is temporarily unavailable. Please try again in a moment.";
+      let userMsg = "AI 서비스가 일시적으로 불안정합니다. 잠시 후 다시 시도해 주세요.";
       try {
         const parsed = JSON.parse(err);
         if (parsed.error?.code === 429) {
-          userMsg = "All available AI models are rate-limited right now. Please try again in a minute.";
+          userMsg = "사용 가능한 AI 모델이 현재 rate limit 상태입니다. 잠시 후 다시 시도해 주세요.";
         } else if (parsed.error?.message) {
           userMsg = parsed.error.message;
         }
